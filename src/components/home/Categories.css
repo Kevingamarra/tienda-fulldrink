@@ -1,0 +1,132 @@
+.categories-section {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 42, 163, 0.04), transparent 45%),
+    #090b0c;
+  padding: 38px 0 34px;
+}
+
+.categories-container {
+  width: min(1480px, calc(100% - 70px));
+  margin: 0 auto;
+}
+
+.categories-heading {
+  margin-bottom: 28px;
+}
+
+.categories-heading h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.categories-heading span {
+  display: block;
+  width: 82px;
+  height: 2px;
+  margin-top: 9px;
+  background: var(--pink);
+  box-shadow: 0 0 9px rgba(255, 42, 163, 0.7);
+}
+
+.categories-row {
+  display: grid;
+  grid-template-columns: repeat(11, minmax(85px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.category-item {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-circle {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--pink);
+  color: var(--pink);
+  background: rgba(5, 5, 5, 0.6);
+  font-size: 2rem;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.category-item p {
+  margin: 12px 0 0;
+  color: #f0f0f0;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.category-item:hover .category-circle {
+  transform: translateY(-4px);
+  background: rgba(255, 42, 163, 0.07);
+  box-shadow:
+    0 0 12px rgba(255, 42, 163, 0.35),
+    0 0 25px rgba(255, 42, 163, 0.12);
+}
+
+.category-item:hover p {
+  color: var(--pink);
+}
+
+@media (max-width: 1200px) {
+  .categories-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 25px;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+  }
+
+  .categories-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-item {
+    min-width: 82px;
+  }
+}
+
+@media (max-width: 600px) {
+  .categories-container {
+    width: calc(100% - 28px);
+  }
+
+  .categories-section {
+    padding-top: 28px;
+  }
+
+  .category-circle {
+    width: 66px;
+    height: 66px;
+    font-size: 1.75rem;
+  }
+
+  .category-item p {
+    font-size: 0.74rem;
+  }
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  pointer-events: none;
+}

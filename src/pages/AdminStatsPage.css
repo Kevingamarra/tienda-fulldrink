@@ -1,0 +1,145 @@
+.admin-stats-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255,42,163,0.07),
+      transparent 34%
+    ),
+    #090b0c;
+  color: white;
+  padding: 48px 0 70px;
+}
+
+.admin-stats-container {
+  width: min(1100px, calc(100% - 60px));
+  margin: 0 auto;
+}
+
+.admin-stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.admin-stats-header span,
+.admin-ranking-title > span {
+  color: var(--pink);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.admin-stats-header h1 {
+  margin: 8px 0 0;
+  font-size: 2.3rem;
+}
+
+.admin-stats-header a {
+  color: var(--pink);
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.admin-stats-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.admin-stats-summary article {
+  min-height: 120px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #111314;
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.admin-stats-summary span {
+  color: #888;
+  font-size: 0.72rem;
+}
+
+.admin-stats-summary strong {
+  color: var(--pink);
+  font-size: 1.6rem;
+}
+
+.admin-products-ranking {
+  margin-top: 28px;
+  padding: 24px;
+  border-radius: 18px;
+  background: #111314;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.admin-ranking-title h2 {
+  margin: 7px 0 22px;
+}
+
+.admin-ranking-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-ranking-list article {
+  min-height: 70px;
+  display: grid;
+  grid-template-columns: 50px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.admin-ranking-list article:last-child {
+  border-bottom: 0;
+}
+
+.admin-ranking-position {
+  color: var(--pink);
+  font-weight: 900;
+}
+
+.admin-ranking-list article > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-ranking-list article > div span {
+  color: #777;
+  font-size: 0.7rem;
+}
+
+.admin-ranking-revenue {
+  color: #ddd;
+}
+
+.admin-ranking-empty {
+  color: #777;
+}
+
+@media (max-width: 650px) {
+  .admin-stats-container {
+    width: calc(100% - 28px);
+  }
+
+  .admin-stats-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-ranking-list article {
+    grid-template-columns: 35px 1fr;
+  }
+
+  .admin-ranking-revenue {
+    grid-column: 2;
+  }
+}

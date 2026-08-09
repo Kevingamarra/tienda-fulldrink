@@ -1,0 +1,122 @@
+.admin-login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255, 42, 163, 0.12),
+      transparent 34%
+    ),
+    #090b0c;
+  color: white;
+}
+
+.admin-login-card {
+  width: min(430px, 100%);
+  padding: 34px;
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.01)
+    ),
+    #111314;
+  border: 1px solid rgba(255, 42, 163, 0.2);
+  box-shadow:
+    0 28px 70px rgba(0,0,0,0.45),
+    0 0 28px rgba(255,42,163,0.08);
+}
+
+.admin-login-brand span {
+  color: var(--pink);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.admin-login-brand h1 {
+  margin: 10px 0 8px;
+  font-size: 2rem;
+}
+
+.admin-login-brand p {
+  margin: 0 0 28px;
+  color: #888;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #ccc;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.admin-login-form input {
+  height: 48px;
+  padding: 0 14px;
+  border-radius: 9px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #0b0d0e;
+  color: white;
+  outline: none;
+}
+
+.admin-login-form input:focus {
+  border-color: rgba(255, 42, 163, 0.55);
+  box-shadow: 0 0 12px rgba(255,42,163,0.1);
+}
+
+.admin-login-form button {
+  min-height: 50px;
+  border: 0;
+  border-radius: 9px;
+  background:
+    linear-gradient(
+      90deg,
+      #f3238d,
+      #ff3cac
+    );
+  color: white;
+  font-size: 0.76rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow:
+    0 0 18px rgba(255,42,163,0.24);
+}
+
+.admin-login-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.admin-login-error {
+  padding: 11px 13px;
+  border-radius: 8px;
+  color: #ff7a7a;
+  background: rgba(255, 107, 107, 0.06);
+  border: 1px solid rgba(255, 107, 107, 0.18);
+  font-size: 0.72rem;
+}
+
+@media (max-width: 550px) {
+  .admin-login-page {
+    padding: 18px;
+  }
+
+  .admin-login-card {
+    padding: 25px 20px;
+  }
+}

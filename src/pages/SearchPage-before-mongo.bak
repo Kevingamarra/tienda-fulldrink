@@ -1,0 +1,83 @@
+import { useSearchParams, Link } from "react-router-dom";
+import products from "../data/products";
+import "../components/home/FeaturedProducts.css";
+
+function SearchPage() {
+  const [searchParams] = useSearchParams();
+  const query = (searchParams.get("q") || "").trim().toLowerCase();
+
+  const results = products.filter((product) => {
+    const text = `${product.name} ${product.category} ${product.size || ""}`.toLowerCase();
+    return query && text.includes(query);
+  });
+
+  return (
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#090b0c",
+        padding: "50px 0",
+      }}
+    >
+      <section className="featured-container">
+        <div className="featured-header">
+          <div>
+            <h2>
+              {query ? `RESULTADOS PARA "${query}"` : "BUSCAR PRODUCTOS"}
+            </h2>
+            <span className="featured-line"></span>
+          </div>
+        </div>
+
+        {!query ? (
+          <p style={{ color: "#aaa" }}>
+            Escribí un producto en el buscador.
+          </p>
+        ) : results.length > 0 ? (
+          <div className="featured-grid">
+            {results.map((product) => (
+              <article className="product-card" key={product.id}>
+                <Link
+                  to={`/producto/${product.id}`}
+                  className="product-image-area"
+                >
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="product-real-image"
+                  />
+                </Link>
+
+                <div className="product-info">
+                  <span className="product-category">
+                    {product.category}
+                  </span>
+
+                  <Link to={`/producto/${product.id}`}>
+                    <h3>{product.name}</h3>
+                  </Link>
+
+                  {product.size && <p>{product.size}</p>}
+
+                  <div className="product-bottom">
+                    <strong>
+                      {product.price !== null
+                        ? `$${product.price.toLocaleString("es-AR")}`
+                        : "Consultar"}
+                    </strong>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p style={{ color: "#aaa" }}>
+            No encontramos productos que coincidan con tu búsqueda.
+          </p>
+        )}
+      </section>
+    </main>
+  );
+}
+
+export default SearchPage;

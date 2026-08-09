@@ -1,0 +1,97 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "animate.css";
+
+:root {
+  --bg-main: #050505;
+  --bg-soft: #0d0d0d;
+  --bg-card: #111111;
+  --pink: #ff2aa3;
+  --pink-strong: #ff1493;
+  --pink-soft: rgba(255, 42, 163, 0.15);
+  --text-main: #ffffff;
+  --text-muted: #b5b5b5;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 42, 163, 0.08), transparent 28%),
+    var(--bg-main);
+  color: var(--text-main);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 800;
+  margin: 0;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.neon-text {
+  color: var(--pink);
+  text-shadow:
+    0 0 8px rgba(255, 42, 163, 0.55),
+    0 0 18px rgba(255, 42, 163, 0.25);
+}
+
+.neon-button {
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff2aa3, #ff006e);
+  color: white;
+  padding: 12px 24px;
+  font-weight: 700;
+  box-shadow:
+    0 0 10px rgba(255, 42, 163, 0.55),
+    0 0 25px rgba(255, 42, 163, 0.25);
+  transition: 0.25s ease;
+}
+
+.neon-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 14px rgba(255, 42, 163, 0.8),
+    0 0 35px rgba(255, 42, 163, 0.35);
+}
+
+@media (max-width: 768px) {
+  .section-shell {
+    width: min(100% - 24px, 1180px);
+  }
+}

@@ -1,0 +1,209 @@
+import beefeater24 from "../assets/images/gin/beefeater-24.jpg";
+import beefeaterBlackberry from "../assets/images/gin/beefeater-blackberry.png";
+import bombayBramble from "../assets/images/gin/bombay-bramble.jpg";
+import gordonsPink from "../assets/images/gin/gordons-pink.jpg";
+
+import sernovaClasico from "../assets/images/vodka/sernova-clasico.jpg";
+import sernovaWildberries from "../assets/images/vodka/sernova-wildberries.jpg";
+import sernovaTropical from "../assets/images/vodka/sernova-tropical.jpg";
+import mayorGalaxyGum from "../assets/images/vodka/mayor-galaxy-gum.jpg";
+
+import jackApple from "../assets/images/whisky/jack-apple.jpg";
+import jackBlackberry from "../assets/images/whisky/jack-blackberry.jpg";
+
+import chandonDelice from "../assets/images/espumantes/chandon-delice.jpg";
+
+const products = [
+  {
+    id: "gin-01",
+    name: "Beefeater 24",
+    category: "gin",
+    image: beefeater24,
+    size: "700 ml",
+    price: 35000,
+    stock: 1,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "🌿 Notas cítricas y botánicas",
+      "🍸 Ideal para Gin Tonic",
+    ],
+    description:
+      "✨ Un gin premium de perfil refinado con notas cítricas y botánicas cuidadosamente seleccionadas. Ideal para disfrutar en un gin tonic elegante o en cócteles de alta calidad.",
+  },
+  {
+    id: "gin-02",
+    name: "Beefeater Blackberry",
+    category: "gin",
+    image: beefeaterBlackberry,
+    size: "700 ml",
+    price: 31000,
+    stock: 1,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "🫐 Sabor intenso a moras",
+      "🍹 Perfecto para tragos frutales",
+    ],
+    description:
+      "💜 Una combinación irresistible entre el clásico Beefeater y el intenso sabor de las moras. Fresco, frutal y perfecto para tragos con un toque dulce.",
+  },
+  {
+    id: "gin-03",
+    name: "Bombay Bramble",
+    category: "gin",
+    image: bombayBramble,
+    size: "700 ml",
+    price: 35000,
+    stock: 1,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "🍇 Infusión de frutos rojos",
+      "🍸 Ideal para sorprender",
+    ],
+    description:
+      "🌿 Gin premium infusionado con moras y frambuesas que ofrece un equilibrio perfecto entre frescura y sabor. Una opción ideal para quienes buscan una experiencia diferente.",
+  },
+  {
+    id: "gin-04",
+    name: "Gordon's Premium Pink",
+    category: "gin",
+    image: gordonsPink,
+    size: "700 ml",
+    price: 16000,
+    stock: 1,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "🍓 Notas de frutos rojos",
+      "🧊 Servir bien frío",
+    ],
+    description:
+      "🍓 Un gin suave y refrescante con delicadas notas de frutos rojos. Perfecto para disfrutar con tónica, hielo y frutas frescas.",
+  },
+
+  {
+    id: "vodka-01",
+    name: "Sernova Clásico",
+    category: "vodka",
+    image: sernovaClasico,
+    size: "700 ml",
+    price: 4500,
+    stock: 4,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "❄️ Sabor limpio y suave",
+      "🍸 Ideal para cócteles",
+    ],
+    description:
+      "🧊 Vodka de sabor limpio y suave, ideal para preparar una gran variedad de cócteles o disfrutar bien frío.",
+  },
+  {
+    id: "vodka-02",
+    name: "Sernova Wild Berries",
+    category: "vodka",
+    image: sernovaWildberries,
+    size: "700 ml",
+    price: 6000,
+    stock: 2,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "🍓 Notas de frutos rojos",
+      "✨ Refrescante y frutal",
+    ],
+    description:
+      "❤️ Una versión frutada con notas de frutos rojos que aporta un toque dulce y refrescante a cualquier trago.",
+  },
+  {
+    id: "vodka-03",
+    name: "Sernova Tropical Passion",
+    category: "vodka",
+    image: sernovaTropical,
+    size: "700 ml",
+    price: 6000,
+    stock: 12,
+    featured: false,
+    highlights: [
+      "⭐ Producto Premium",
+      "🥭 Perfil tropical",
+      "🌴 Ideal para tragos frescos",
+    ],
+    description:
+      "🌴 Vodka con un perfil tropical y fresco, pensado para crear cócteles vibrantes y llenos de sabor.",
+  },
+  {
+    id: "vodka-04",
+    name: "Mayor Galaxy Gum",
+    category: "vodka",
+    image: mayorGalaxyGum,
+    size: "700 ml",
+    price: 9500,
+    stock: 6,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "🍬 Sabor chicle",
+      "💥 Experiencia diferente",
+    ],
+    description:
+      "💫 Vodka sabor chicle con un perfil dulce y original, ideal para quienes buscan tragos diferentes y llamativos.",
+  },
+
+  {
+    id: "whisky-01",
+    name: "Jack Daniel's Tennessee Apple",
+    category: "whisky",
+    image: jackApple,
+    size: "1 Litro",
+    price: 45000,
+    stock: 1,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "🍏 Toque de manzana verde",
+      "🥃 Suave y equilibrado",
+    ],
+    description:
+      "🥃 La combinación perfecta entre el clásico Jack Daniel's y el sabor fresco de la manzana verde. Suave, equilibrado y muy fácil de disfrutar.",
+  },
+  {
+    id: "whisky-02",
+    name: "Jack Daniel's Tennessee Blackberry",
+    category: "whisky",
+    image: jackBlackberry,
+    size: "750 ml",
+    price: 70000,
+    stock: 2,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "🫐 Notas intensas de mora",
+      "🥃 Sabor único",
+    ],
+    description:
+      "🌙 Una edición con intensas notas de mora que aporta un carácter frutal sin perder la esencia del whisky Jack Daniel's.",
+  },
+
+  {
+    id: "espumante-01",
+    name: "Chandon Délice",
+    category: "espumantes",
+    image: chandonDelice,
+    size: "750 ml",
+    price: 15000,
+    stock: 4,
+    featured: true,
+    highlights: [
+      "⭐ Producto Premium",
+      "�� Ideal para brindar",
+      "❄️ Disfrutalo con hielo",
+    ],
+    description:
+      "✨ Espumante pensado para disfrutarse con hielo y frutas frescas. Refrescante, elegante y perfecto para brindar en cualquier ocasión.",
+  },
+];
+
+export default products;

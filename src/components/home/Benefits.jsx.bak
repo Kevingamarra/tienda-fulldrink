@@ -1,0 +1,47 @@
+import "./Benefits.css";
+
+const benefits = [
+  {
+    icon: "bi-truck",
+    title: "ENVÍOS",
+    text: "Coordinamos tu entrega",
+  },
+  {
+    icon: "bi-credit-card",
+    title: "PAGOS",
+    text: "Opciones simples y seguras",
+  },
+  {
+    icon: "bi-whatsapp",
+    title: "ATENCIÓN",
+    text: "Contacto directo",
+  },
+  {
+    icon: "bi-shield-check",
+    title: "PRODUCTOS",
+    text: "Selección Full Drinks",
+  },
+];
+
+function Benefits() {
+  return (
+    <section className="benefits-section">
+      <div className="benefits-container">
+        {benefits.map((benefit) => (
+          <article className="benefit-item" key={benefit.title}>
+            <div className="benefit-icon">
+              <i className={`bi ${benefit.icon}`}></i>
+            </div>
+
+            <div>
+              <h3>{benefit.title}</h3>
+              <p>{benefit.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export default Benefits;

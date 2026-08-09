@@ -1,0 +1,127 @@
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import combos from "../data/combos";
+import { useCart } from "../context/CartContext";
+import "./ComboDetailPage.css";
+
+function ComboDetailPage() {
+  const { id } = useParams();
+
+  const combo = combos.find((item) => item.id === id);
+
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
+  if (!combo) {
+    return (
+      <main className="combo-detail-page combo-detail-not-found">
+        <h1>Combo no encontrado</h1>
+
+        <Link to="/combos" className="combo-detail-back">
+          Volver a combos
+        </Link>
+      </main>
+    );
+  }
+
+  const decreaseQuantity = () => {
+    setQuantity((current) => Math.max(1, current - 1));
+  };
+
+  const increaseQuantity = () => {
+    setQuantity((current) => current + 1);
+  };
+
+  const handleAddToCart = () => {
+    addToCart(
+      {
+        ...combo,
+        category: "combo",
+      },
+      quantity
+    );
+  };
+
+  return (
+    <main className="combo-detail-page">
+      <div className="combo-detail-container">
+        <Link to="/combos" className="combo-detail-back">
+          <i className="bi bi-arrow-left"></i>
+          Volver a combos
+        </Link>
+
+        <section className="combo-detail">
+          <div className="combo-detail-image-card">
+            <div className="combo-detail-glow"></div>
+
+            <img
+              src={combo.image}
+              alt={combo.name}
+              className="combo-detail-image"
+            />
+          </div>
+
+          <div className="combo-detail-info">
+            <span className="combo-detail-category">
+              COMBO FULL DRINKS
+            </span>
+
+            <h1>{combo.name}</h1>
+
+            <div className="combo-detail-price">
+              ${combo.price.toLocaleString("es-AR")}
+            </div>
+
+            <div className="combo-detail-includes">
+              <span>🍹 Este combo incluye</span>
+              <strong>{combo.includes}</strong>
+            </div>
+
+            <div className="combo-detail-highlights">
+              {combo.highlights.map((highlight) => (
+                <p key={highlight}>{highlight}</p>
+              ))}
+            </div>
+
+            <p className="combo-detail-description">
+              {combo.description}
+            </p>
+
+            <div className="combo-detail-actions">
+              <div className="combo-quantity-selector">
+                <button
+                  type="button"
+                  onClick={decreaseQuantity}
+                  aria-label="Disminuir cantidad"
+                >
+                  −
+                </button>
+
+                <span>{quantity}</span>
+
+                <button
+                  type="button"
+                  onClick={increaseQuantity}
+                  aria-label="Aumentar cantidad"
+                >
+                  +
+                </button>
+              </div>
+
+              <button
+                type="button"
+                className="combo-add-button"
+                onClick={handleAddToCart}
+              >
+                <i className="bi bi-cart3"></i>
+                AGREGAR AL CARRITO
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
+
+export default ComboDetailPage;

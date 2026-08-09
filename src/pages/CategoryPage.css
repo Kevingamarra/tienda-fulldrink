@@ -1,0 +1,48 @@
+.category-page {
+  min-height: 100vh;
+  background: #090b0c;
+  padding: 38px 0 50px;
+}
+
+.category-back-button {
+  border: 0;
+  background: transparent;
+  color: var(--pink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin-bottom: 26px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.category-back-button:hover {
+  color: #ff62bc;
+  transform: translateX(-3px);
+}
+
+.category-empty {
+  color: #aaa;
+}
+
+@media (max-width: 700px) {
+  .category-page {
+    padding: 28px 0 42px;
+  }
+
+  .category-back-button {
+    margin-bottom: 20px;
+  }
+}
+
+@media (hover: none) {
+  .category-back-button:hover {
+    transform: none;
+    color: var(--pink);
+  }
+}

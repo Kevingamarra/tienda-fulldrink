@@ -1,0 +1,53 @@
+.hero-section {
+  width: 100%;
+  background: #050505;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-wrapper {
+  position: relative;
+  width: min(860px, 100%);
+  margin: 0 auto;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Área clickeable exactamente sobre VER COMBOS */
+.hero-combos-button {
+  position: absolute;
+  left: 5.4%;
+  bottom: 19.5%;
+  width: 30.5%;
+  height: 11%;
+  border-radius: 18px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.hero-combos-button:hover {
+  box-shadow:
+    0 0 18px rgba(255, 42, 163, 0.35),
+    0 0 30px rgba(255, 42, 163, 0.15);
+}
+
+@media (max-width: 900px) {
+  .hero-wrapper {
+    width: min(760px, 100%);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-wrapper {
+    width: 100%;
+  }
+
+  .hero-combos-button {
+    border-radius: 10px;
+  }
+}

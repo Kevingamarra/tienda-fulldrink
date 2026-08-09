@@ -1,0 +1,135 @@
+.envios-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(255, 42, 163, 0.08), transparent 35%),
+    #090b0c;
+  color: white;
+  padding: 48px 0 70px;
+}
+
+.envios-container {
+  width: min(1180px, calc(100% - 60px));
+  margin: 0 auto;
+}
+
+.envios-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--pink);
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.envios-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.envios-heading span {
+  color: var(--pink);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.envios-heading h1 {
+  margin: 10px 0 12px;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.envios-heading p {
+  color: #9a9a9a;
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+.envios-map-card {
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 42, 163, 0.18);
+  background: #111314;
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(255, 42, 163, 0.08);
+}
+
+.envios-map-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.envios-info {
+  padding: 22px;
+  border-radius: 16px;
+  background: rgba(255, 42, 163, 0.04);
+  border: 1px solid rgba(255, 42, 163, 0.12);
+}
+
+.envios-info h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.envios-info p {
+  color: #aaa;
+  line-height: 1.65;
+  font-size: 0.9rem;
+}
+
+.envios-whatsapp {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #f3238d, #ff3cac);
+  color: white;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+@media (max-width: 600px) {
+  .envios-page {
+    padding: 28px 0 45px;
+  }
+
+  .envios-container {
+    width: calc(100% - 28px);
+  }
+
+  .envios-heading h1 {
+    font-size: 2.2rem;
+  }
+
+  .envios-info {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .envios-map-card {
+    border-radius: 14px;
+  }
+
+  .envios-map-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .envios-heading p {
+    font-size: 0.88rem;
+  }
+
+  .envios-whatsapp {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}

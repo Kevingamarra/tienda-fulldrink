@@ -1,0 +1,138 @@
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useCatalog } from "../context/CatalogContext";
+import { useCart } from "../context/CartContext";
+import "./ProductPage.css";
+
+function ProductPage() {
+  const { id } = useParams();
+  const { products } = useCatalog();
+  const product = products.find((item) => item.id === id);
+
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
+  if (!product) {
+    return (
+      <main className="product-page product-not-found">
+        <h1>Producto no encontrado</h1>
+
+        <Link to="/" className="product-back-link">
+          Volver al inicio
+        </Link>
+      </main>
+    );
+  }
+
+  const decreaseQuantity = () => {
+    setQuantity((current) => Math.max(1, current - 1));
+  };
+
+  const increaseQuantity = () => {
+    setQuantity((current) => current + 1);
+  };
+
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+  };
+
+  return (
+    <main className="product-page">
+      <div className="product-page-container">
+        <Link to="/" className="product-back-link">
+          <i className="bi bi-arrow-left"></i>
+          Volver
+        </Link>
+
+        <section className="product-detail">
+          <div className="product-detail-image-card">
+            <div className="product-detail-glow"></div>
+
+            <img
+              src={product.image}
+              alt={product.name}
+              className="product-detail-image"
+            />
+          </div>
+
+          <div className="product-detail-info">
+            <span className="product-detail-category">
+              {product.category}
+            </span>
+
+            <h1>{product.name}</h1>
+
+            <div className="product-detail-price">
+              ${product.price.toLocaleString("es-AR")}
+            </div>
+
+            <div className="product-detail-meta">
+              <span>📦 Contenido</span>
+              <strong>{product.size}</strong>
+            </div>
+
+            <div className="product-highlights">
+              {product.highlights.map((highlight) => (
+                <p key={highlight}>{highlight}</p>
+              ))}
+            </div>
+
+            <p className="product-detail-description">
+              {product.description}
+            </p>
+
+            <div className="product-detail-actions">
+              <div className="quantity-selector">
+                <button
+                  type="button"
+                  onClick={decreaseQuantity}
+                  aria-label="Disminuir cantidad"
+                >
+                  −
+                </button>
+
+                <span>{quantity}</span>
+
+                <button
+                  type="button"
+                  onClick={increaseQuantity}
+                  aria-label="Aumentar cantidad"
+                >
+                  +
+                </button>
+              </div>
+
+              <button
+                type="button"
+                className="product-add-button"
+                onClick={handleAddToCart}
+              >
+                <i className="bi bi-cart3"></i>
+                AGREGAR AL CARRITO
+              </button>
+            </div>
+
+            <div className="product-detail-benefits">
+              <div>
+                <i className="bi bi-shield-check"></i>
+                <span>Compra segura</span>
+              </div>
+
+              <div>
+                <i className="bi bi-box-seam"></i>
+                <span>Producto original</span>
+              </div>
+
+              <div>
+                <i className="bi bi-whatsapp"></i>
+                <span>Atención directa</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
+
+export default ProductPage;

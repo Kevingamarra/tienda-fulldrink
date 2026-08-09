@@ -1,0 +1,196 @@
+import combo01 from "../assets/images/combos/combo-01.png";
+import combo02 from "../assets/images/combos/combo-02.png";
+import combo03 from "../assets/images/combos/combo-03.png";
+import combo04 from "../assets/images/combos/combo-04.png";
+import combo05 from "../assets/images/combos/combo-05.png";
+import combo06 from "../assets/images/combos/combo-06.png";
+import combo07 from "../assets/images/combos/combo-07.png";
+import combo08 from "../assets/images/combos/combo-08.png";
+import combo09 from "../assets/images/combos/combo-09.png";
+import combo10 from "../assets/images/combos/combo-10.png";
+import combo11 from "../assets/images/combos/combo-11.png";
+import combo12 from "../assets/images/combos/combo-12.png";
+
+const combos = [
+  {
+    id: "combo-01",
+    name: "Combo 01",
+    image: combo01,
+    price: 14000,
+    includes: "Mayor Galaxy Gum + Sprite 2.25 L",
+    highlights: [
+      "⭐ Listo para disfrutar",
+      "🥤 Incluye Sprite 2.25 L",
+      "🍬 Sabor dulce y original",
+    ],
+    description:
+      "✨ Un combo ideal para quienes buscan un trago diferente. El sabor a chicle de Mayor Galaxy Gum junto a Sprite crea una combinación refrescante, perfecta para compartir. Solo agregá hielo y disfrutá.",
+  },
+
+  {
+    id: "combo-02",
+    name: "Combo 02",
+    image: combo02,
+    price: 14000,
+    includes: "Mayor Galaxy Gum + 2 Speed XL",
+    highlights: [
+      "⭐ Listo para disfrutar",
+      "⚡ Incluye 2 Speed XL",
+      "🎉 Ideal para la previa",
+    ],
+    description:
+      "💥 Una combinación intensa que mezcla el inconfundible sabor de Mayor Galaxy Gum con la energía de dos Speed XL. Perfecto para una noche con amigos.",
+  },
+
+  {
+    id: "combo-03",
+    name: "Combo 03",
+    image: combo03,
+    price: 36000,
+    includes: "Beefeater Blackberry + Sprite 2.25 L",
+    highlights: [
+      "⭐ Gin Premium",
+      "🥤 Incluye Sprite 2.25 L",
+      "🫐 Notas frutales",
+    ],
+    description:
+      "💜 El equilibrio perfecto entre las notas de mora de Beefeater Blackberry y la frescura de Sprite. Un combo elegante, refrescante y muy fácil de preparar.",
+  },
+
+  {
+    id: "combo-04",
+    name: "Combo 04",
+    image: combo04,
+    price: 36000,
+    includes: "Beefeater Blackberry + 2 Speed XL",
+    highlights: [
+      "⭐ Gin Premium",
+      "⚡ Incluye 2 Speed XL",
+      "🌙 Ideal para compartir",
+    ],
+    description:
+      "🍸 Una propuesta intensa para quienes disfrutan los tragos con personalidad. La combinación de Beefeater Blackberry y Speed XL logra un sabor único y muy refrescante.",
+  },
+
+  {
+    id: "combo-05",
+    name: "Combo 05",
+    image: combo05,
+    price: 20000,
+    includes: "Chandon Délice + 2 Speed XL",
+    highlights: [
+      "⭐ Espumante Premium",
+      "⚡ Incluye 2 Speed XL",
+      "🥂 Ideal para celebraciones",
+    ],
+    description:
+      "✨ Una opción diferente para quienes buscan salir de lo tradicional. Un combo pensado para compartir y disfrutar bien frío en cualquier ocasión especial.",
+  },
+
+  {
+    id: "combo-06",
+    name: "Combo 06",
+    image: combo06,
+    price: 40000,
+    includes: "Bombay Bramble + Sprite 2.25 L",
+    highlights: [
+      "⭐ Gin Premium",
+      "🥤 Incluye Sprite 2.25 L",
+      "🍇 Notas de frutos rojos",
+    ],
+    description:
+      "🌿 Bombay Bramble y Sprite forman una combinación fresca y equilibrada, resaltando sus notas de mora y frambuesa. Ideal para disfrutar con mucho hielo.",
+  },
+
+  {
+    id: "combo-07",
+    name: "Combo 07",
+    image: combo07,
+    price: 21000,
+    includes: "Gordon's Pink + Sprite 2.25 L",
+    highlights: [
+      "⭐ Gin Premium",
+      "🥤 Incluye Sprite 2.25 L",
+      "🍓 Suave y refrescante",
+    ],
+    description:
+      "🌸 Un combo delicado y muy refrescante. Gordon's Pink aporta un sabor frutal que se complementa perfectamente con Sprite para lograr un trago ligero y fácil de disfrutar.",
+  },
+
+  {
+    id: "combo-08",
+    name: "Combo 08",
+    image: combo08,
+    price: 21000,
+    includes: "Gordon's Pink + 2 Speed XL",
+    highlights: [
+      "⭐ Gin Premium",
+      "⚡ Incluye 2 Speed XL",
+      "🎉 Ideal para compartir",
+    ],
+    description:
+      "💖 La combinación ideal entre el perfil frutal de Gordon's Pink y la intensidad de Speed XL. Un combo pensado para quienes buscan una experiencia diferente.",
+  },
+
+  {
+    id: "combo-09",
+    name: "Combo 09",
+    image: combo09,
+    price: 32000,
+    includes: "Freixenet + 2 Speed XL",
+    highlights: [
+      "⭐ Espumante Premium",
+      "⚡ Incluye 2 Speed XL",
+      "🥂 Perfecto para brindar",
+    ],
+    description:
+      "✨ Una propuesta original para disfrutar un espumante con un toque diferente. Ideal para reuniones, celebraciones o una previa especial.",
+  },
+
+  {
+    id: "combo-10",
+    name: "Combo 10",
+    image: combo10,
+    price: 40000,
+    includes: "Bombay Bramble + 2 Speed XL",
+    highlights: [
+      "⭐ Gin Premium",
+      "⚡ Incluye 2 Speed XL",
+      "🍇 Sabor intenso",
+    ],
+    description:
+      "🔥 Bombay Bramble y Speed XL crean una combinación con mucho carácter, perfecta para quienes disfrutan tragos intensos y llenos de personalidad.",
+  },
+
+  {
+    id: "combo-11",
+    name: "Combo 11",
+    image: combo11,
+    price: 10000,
+    includes: "Sernova Wild Berries + Sprite 2.25 L",
+    highlights: [
+      "⭐ Vodka saborizado",
+      "🥤 Incluye Sprite 2.25 L",
+      "🍓 Refrescante y frutal",
+    ],
+    description:
+      "❤️ El equilibrio ideal entre las notas de frutos rojos de Sernova Wild Berries y la frescura de Sprite. Un combo liviano, dulce y muy fácil de disfrutar.",
+  },
+
+  {
+    id: "combo-12",
+    name: "Combo 12",
+    image: combo12,
+    price: 10000,
+    includes: "Sernova Wild Berries + 2 Speed XL",
+    highlights: [
+      "⭐ Vodka saborizado",
+      "⚡ Incluye 2 Speed XL",
+      "💥 Ideal para la noche",
+    ],
+    description:
+      "🍓 Un combo pensado para quienes buscan un trago con más intensidad. La combinación de Sernova Wild Berries y Speed XL ofrece un sabor frutal con mucha personalidad.",
+  },
+];
+
+export default combos;

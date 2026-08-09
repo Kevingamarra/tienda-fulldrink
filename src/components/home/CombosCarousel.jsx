@@ -1,0 +1,130 @@
+import { Link } from "react-router-dom";
+import {
+  Swiper,
+  SwiperSlide,
+} from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+import { useCatalog } from "../../context/CatalogContext";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "./CombosCarousel.css";
+
+function CombosCarousel() {
+  const { combos } = useCatalog();
+
+  const getStockInfo = (stock) => {
+    if (stock <= 0) {
+      return {
+        className: "stock-out",
+        text: "🔴 Sin stock",
+      };
+    }
+
+    if (stock <= 2) {
+      return {
+        className: "stock-low",
+        text:
+          stock === 1
+            ? "🟠 Última unidad"
+            : `🟠 Últimas ${stock} unidades`,
+      };
+    }
+
+    return {
+      className: "stock-available",
+      text: `🟢 Disponible (${stock})`,
+    };
+  };
+
+  return (
+    <section
+      className="combos-section"
+      id="combos"
+    >
+      <div className="combos-container">
+        <div className="combos-header">
+          <div>
+            <h2>COMBOS DESTACADOS</h2>
+            <span className="combos-line"></span>
+          </div>
+
+          <Link
+            to="/combos"
+            className="combos-view-all"
+          >
+            VER TODOS
+            <i className="bi bi-arrow-right"></i>
+          </Link>
+        </div>
+
+        <Swiper
+          modules={[Navigation]}
+          navigation
+          spaceBetween={18}
+          slidesPerView={1}
+          breakpoints={{
+            560: { slidesPerView: 2 },
+            850: { slidesPerView: 3 },
+            1200: { slidesPerView: 4 },
+          }}
+          className="combos-swiper"
+        >
+          {combos.map((combo) => {
+            const stockInfo =
+              getStockInfo(combo.stock);
+
+            return (
+              <SwiperSlide key={combo.id}>
+                <article className="combo-card">
+                  <div className="combo-image-wrapper">
+                    <img
+                      src={combo.image}
+                      alt={combo.name}
+                      className="combo-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  <div className="combo-info">
+                    <span className="combo-kicker">
+                      COMBO
+                    </span>
+
+                    <h3>{combo.name}</h3>
+
+                    <span
+                      className={`combo-stock ${stockInfo.className}`}
+                    >
+                      {stockInfo.text}
+                    </span>
+
+                    <div className="combo-bottom">
+                      <strong>
+                        $
+                        {combo.price.toLocaleString(
+                          "es-AR"
+                        )}
+                      </strong>
+
+                      <Link
+                        to={`/combo/${combo.id}`}
+                        className="combo-button"
+                      >
+                        VER COMBO
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+    </section>
+  );
+}
+
+export default CombosCarousel;

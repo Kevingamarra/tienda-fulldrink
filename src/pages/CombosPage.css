@@ -1,0 +1,245 @@
+.all-combos-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 42, 163, 0.06), transparent 32%),
+    #090b0c;
+  padding: 55px 0 70px;
+}
+
+.all-combos-container {
+  width: min(1480px, calc(100% - 70px));
+  margin: 0 auto;
+}
+
+.all-combos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.all-combos-header h1 {
+  margin: 0;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+.all-combos-header > div > span {
+  display: block;
+  width: 85px;
+  height: 2px;
+  margin-top: 10px;
+  background: var(--pink);
+  box-shadow: 0 0 10px rgba(255, 42, 163, 0.7);
+}
+
+.all-combos-header p {
+  margin: 0;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.all-combos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.all-combo-card {
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.01)
+    ),
+    #121415;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.all-combo-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 42, 163, 0.4);
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, 0.4),
+    0 0 22px rgba(255, 42, 163, 0.08);
+}
+
+.all-combo-image {
+  height: 330px;
+  background: #0d0d0d;
+  overflow: hidden;
+}
+
+.all-combo-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+}
+
+.all-combo-info {
+  padding: 17px;
+}
+
+.all-combo-info > span {
+  color: var(--pink);
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+}
+
+.all-combo-info h2 {
+  color: white;
+  font-size: 1rem;
+  margin: 7px 0 0;
+}
+
+.all-combo-bottom {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.all-combo-bottom strong {
+  color: var(--pink);
+}
+
+.all-combo-bottom button {
+  border: 1px solid var(--pink);
+  border-radius: 7px;
+  background: rgba(255, 42, 163, 0.07);
+  color: white;
+  padding: 8px 12px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.all-combo-bottom button:hover {
+  background: var(--pink);
+}
+
+@media (max-width: 1100px) {
+  .all-combos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .all-combos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .all-combos-container {
+    width: calc(100% - 28px);
+  }
+
+  .all-combos-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .all-combos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .all-combo-image {
+    height: 390px;
+  }
+}
+
+.all-combo-includes {
+  color: #8c8c8c;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  margin: 9px 0 0;
+  min-height: 32px;
+}
+
+.all-combo-button {
+  border: 1px solid var(--pink);
+  border-radius: 7px;
+  background: rgba(255, 42, 163, 0.07);
+  color: white;
+  padding: 8px 12px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.all-combo-button:hover {
+  background: var(--pink);
+  color: white;
+}
+
+/* Ajustes responsive extra para página de combos */
+
+@media (max-width: 550px) {
+  .all-combos-page {
+    padding: 34px 0 45px;
+  }
+
+  .all-combos-header {
+    margin-bottom: 24px;
+  }
+
+  .all-combos-header h1 {
+    font-size: 1.45rem;
+  }
+
+  .all-combo-image {
+    height: 300px;
+  }
+
+  .all-combo-info {
+    padding: 15px;
+  }
+
+  .all-combo-info h2 {
+    font-size: 0.95rem;
+  }
+
+  .all-combo-includes {
+    font-size: 0.7rem;
+  }
+
+  .all-combo-bottom {
+    margin-top: 15px;
+  }
+
+  .all-combo-button {
+    padding: 8px 11px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .all-combo-image {
+    height: 270px;
+  }
+}
+
+@media (hover: none) {
+  .all-combo-card:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+  }
+
+  .all-combo-button:hover {
+    background: rgba(255, 42, 163, 0.07);
+  }
+}

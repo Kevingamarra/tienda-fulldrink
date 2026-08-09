@@ -1,0 +1,121 @@
+import beefeater24 from "../assets/images/gin/beefeater-24.jpg";
+import beefeaterBlackberry from "../assets/images/gin/beefeater-blackberry.png";
+import bombayBramble from "../assets/images/gin/bombay-bramble.jpg";
+import gordonsPink from "../assets/images/gin/gordons-pink.jpg";
+
+import sernovaClasico from "../assets/images/vodka/sernova-clasico.jpg";
+import sernovaWildberries from "../assets/images/vodka/sernova-wildberries.jpg";
+import sernovaTropical from "../assets/images/vodka/sernova-tropical.jpg";
+import mayorGalaxyGum from "../assets/images/vodka/mayor-galaxy-gum.jpg";
+
+import jackApple from "../assets/images/whisky/jack-apple.jpg";
+import jackBlackberry from "../assets/images/whisky/jack-blackberry.jpg";
+
+import chandonDelice from "../assets/images/espumantes/chandon-delice.jpg";
+
+const products = [
+  {
+    id: "gin-01",
+    name: "Beefeater 24",
+    category: "gin",
+    image: beefeater24,
+    size: "",
+    price: 35000,
+    featured: true,
+  },
+  {
+    id: "gin-02",
+    name: "Beefeater Blackberry",
+    category: "gin",
+    image: beefeaterBlackberry,
+    size: "",
+    price: 31000,
+    featured: true,
+  },
+  {
+    id: "gin-03",
+    name: "Bombay Bramble",
+    category: "gin",
+    image: bombayBramble,
+    size: "",
+    price: 35000,
+    featured: true,
+  },
+  {
+    id: "gin-04",
+    name: "Gordon's Premium Pink",
+    category: "gin",
+    image: gordonsPink,
+    size: "",
+    price: 16000,
+    featured: true,
+  },
+
+  {
+    id: "vodka-01",
+    name: "Sernova Clásico",
+    category: "vodka",
+    image: sernovaClasico,
+    size: "",
+    price: 4500,
+    featured: true,
+  },
+  {
+    id: "vodka-02",
+    name: "Sernova Wild Berries",
+    category: "vodka",
+    image: sernovaWildberries,
+    size: "",
+    price: 6000,
+    featured: true,
+  },
+  {
+    id: "vodka-03",
+    name: "Sernova Tropical Passion",
+    category: "vodka",
+    image: sernovaTropical,
+    size: "",
+    price: 6000,
+    featured: false,
+  },
+  {
+    id: "vodka-04",
+    name: "Mayor Galaxy Gum",
+    category: "vodka",
+    image: mayorGalaxyGum,
+    size: "",
+    price: 9500,
+    featured: true,
+  },
+
+  {
+    id: "whisky-01",
+    name: "Jack Daniel's Tennessee Apple",
+    category: "whisky",
+    image: jackApple,
+    size: "1 L",
+    price: 45000,
+    featured: true,
+  },
+  {
+    id: "whisky-02",
+    name: "Jack Daniel's Tennessee Blackberry",
+    category: "whisky",
+    image: jackBlackberry,
+    size: "",
+    price: 70000,
+    featured: true,
+  },
+
+  {
+    id: "espumante-01",
+    name: "Chandon Délice",
+    category: "espumantes",
+    image: chandonDelice,
+    size: "",
+    price: 15000,
+    featured: true,
+  },
+];
+
+export default products;
