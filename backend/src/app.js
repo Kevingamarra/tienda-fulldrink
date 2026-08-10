@@ -9,9 +9,22 @@ import deliveryRouter from "./routes/delivery.routes.js";
 
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://tienda-fulldrink.onrender.com",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(
+        new Error("Origen no permitido por CORS")
+      );
+    },
     credentials: true,
   })
 );
