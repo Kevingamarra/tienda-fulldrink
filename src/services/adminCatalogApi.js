@@ -1,20 +1,25 @@
 import { API_BASE_URL } from "../config/api";
+import { getAdminAuthHeaders } from "../utils/adminToken";
+
 const API_URL = `${API_BASE_URL}/api/products`;
 
 async function request(url, options = {}) {
   const response = await fetch(url, {
     credentials: "include",
+    ...options,
     headers: {
       "Content-Type": "application/json",
       ...(options.headers || {}),
+      ...getAdminAuthHeaders(),
     },
-    ...options,
   });
 
   const data = await response.json();
 
   if (!response.ok) {
-    throw new Error(data.message || "Error");
+    throw new Error(
+      data.message || "Error"
+    );
   }
 
   return data.payload;

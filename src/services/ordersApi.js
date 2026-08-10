@@ -1,10 +1,16 @@
 import { API_BASE_URL } from "../config/api";
+import { getAdminAuthHeaders } from "../utils/adminToken";
+
 const API_URL = `${API_BASE_URL}/api/orders`;
 
 async function request(url, options = {}) {
   const response = await fetch(url, {
     credentials: "include",
     ...options,
+    headers: {
+      ...(options.headers || {}),
+      ...getAdminAuthHeaders(),
+    },
   });
 
   const data = await response.json();

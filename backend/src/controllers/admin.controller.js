@@ -54,6 +54,7 @@ export const loginAdmin = async (req, res) => {
       payload: {
         email: admin.email,
         role: admin.role,
+        token,
       },
     });
   } catch (error) {
