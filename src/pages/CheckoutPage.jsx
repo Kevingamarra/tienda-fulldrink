@@ -66,7 +66,6 @@ function CheckoutPage() {
   }, []);
 
   useEffect(() => {
-    setDeliverySlot("");
     setSchedule([]);
 
     if (!deliveryDate) {
@@ -95,7 +94,7 @@ function CheckoutPage() {
     }
 
     loadSchedule();
-  }, [deliveryDate, deliveryType, showToast]);
+  }, [deliveryDate, deliveryType]);
 
   const validate = () => {
     if (!customerName.trim()) {

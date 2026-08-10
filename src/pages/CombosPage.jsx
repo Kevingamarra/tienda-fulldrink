@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCatalog } from "../context/CatalogContext";
 import "./CombosPage.css";
@@ -6,6 +7,14 @@ import "./CategoryPage.css";
 function CombosPage() {
   const navigate = useNavigate();
   const { combos } = useCatalog();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+  }, []);
   return (
     <main className="all-combos-page">
       <div className="all-combos-container">

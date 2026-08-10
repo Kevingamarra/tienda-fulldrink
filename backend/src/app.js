@@ -11,6 +11,9 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "http://localhost:5174",
+  "http://192.168.1.109:5173",
+  "http://192.168.1.109:5174",
   "https://tienda-fulldrink.onrender.com",
 ];
 
