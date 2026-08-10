@@ -467,3 +467,39 @@ export const cancelOrder = async (req, res) => {
     await session.endSession();
   }
 };
+
+export const deleteOrder = async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.id);
+
+    if (!order) {
+      return res.status(404).json({
+        status: "error",
+        message: "Pedido no encontrado",
+      });
+    }
+
+    if (order.status !== "cancelled") {
+      return res.status(409).json({
+        status: "error",
+        message:
+          "Solo se pueden eliminar pedidos cancelados",
+      });
+    }
+
+    await Order.findByIdAndDelete(req.params.id);
+
+    res.json({
+      status: "success",
+      message: "Pedido eliminado definitivamente",
+      payload: {
+        id: req.params.id,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "error",
+      message: error.message,
+    });
+  }
+};

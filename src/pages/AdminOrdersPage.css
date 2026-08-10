@@ -409,3 +409,34 @@
     grid-template-columns: 1fr;
   }
 }
+
+.admin-order-delete-wrap {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.admin-delete-order {
+  min-height: 40px;
+  padding: 0 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 80, 80, 0.28);
+  background: rgba(255, 80, 80, 0.06);
+  color: #ff6b6b;
+  font-size: 0.68rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.admin-delete-order:hover {
+  background: rgba(255, 80, 80, 0.12);
+  border-color: rgba(255, 80, 80, 0.5);
+}
+
+.admin-delete-order:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}

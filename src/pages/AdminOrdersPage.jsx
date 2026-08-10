@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   cancelOrder,
+  deleteOrder,
   confirmOrder,
   getOrders,
 } from "../services/ordersApi";
@@ -121,6 +122,35 @@ function AdminOrdersPage() {
 
       setMessage(
         `Pedido #${code} cancelado. Stock liberado.`
+      );
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setProcessingId(null);
+    }
+  };
+
+  const handleDelete = async (order) => {
+    const code = order._id
+      .slice(-6)
+      .toUpperCase();
+
+    const ok = window.confirm(
+      `¿Eliminar definitivamente el pedido #? Esta acción no se puede deshacer.`
+    );
+
+    if (!ok) return;
+
+    try {
+      setProcessingId(order._id);
+      setMessage("");
+      setError("");
+
+      await deleteOrder(order._id);
+      await loadOrders();
+
+      setMessage(
+        `Pedido # eliminado definitivamente.`
       );
     } catch (err) {
       setError(err.message);
@@ -466,12 +496,31 @@ function AdminOrdersPage() {
 
                   {order.status === "cancelled" &&
                     order.cancelledAt && (
-                      <div className="admin-order-processed">
-                        Cancelado el{" "}
-                        {new Date(
-                          order.cancelledAt
-                        ).toLocaleString("es-AR")}
-                      </div>
+                      <>
+                        <div className="admin-order-processed">
+                          Cancelado el{" "}
+                          {new Date(
+                            order.cancelledAt
+                          ).toLocaleString("es-AR")}
+                        </div>
+
+                        <div className="admin-order-delete-wrap">
+                          <button
+                            type="button"
+                            className="admin-delete-order"
+                            disabled={
+                              processingId ===
+                              order._id
+                            }
+                            onClick={() =>
+                              handleDelete(order)
+                            }
+                          >
+                            <i className="bi bi-trash3"></i>
+                            ELIMINAR DEFINITIVAMENTE
+                          </button>
+                        </div>
+                      </>
                     )}
                 </article>
               );

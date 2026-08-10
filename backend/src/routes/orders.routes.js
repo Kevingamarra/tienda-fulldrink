@@ -4,6 +4,7 @@ import {
   getOrders,
   confirmOrder,
   cancelOrder,
+  deleteOrder,
 } from "../controllers/orders.controller.js";
 import { adminAuth } from "../middlewares/adminAuth.js";
 
@@ -16,5 +17,6 @@ router.post("/", createOrder);
 router.get("/", adminAuth, getOrders);
 router.patch("/:id/confirm", adminAuth, confirmOrder);
 router.patch("/:id/cancel", adminAuth, cancelOrder);
+router.delete("/:id", adminAuth, deleteOrder);
 
 export default router;

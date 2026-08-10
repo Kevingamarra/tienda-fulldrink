@@ -55,3 +55,12 @@ export async function cancelOrder(orderId) {
     }
   );
 }
+
+export async function deleteOrder(orderId) {
+  return request(
+    `${API_URL}/${orderId}`,
+    {
+      method: "DELETE",
+    }
+  );
+}
