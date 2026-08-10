@@ -38,10 +38,13 @@ export const loginAdmin = async (req, res) => {
 
     const token = generateToken(admin);
 
+    const isProduction =
+      process.env.NODE_ENV === "production";
+
     res.cookie("adminToken", token, {
       httpOnly: true,
-      sameSite: "lax",
-      secure: false,
+      sameSite: isProduction ? "none" : "lax",
+      secure: isProduction,
       maxAge: 8 * 60 * 60 * 1000,
     });
 
@@ -69,10 +72,13 @@ export const currentAdmin = async (req, res) => {
 };
 
 export const logoutAdmin = async (req, res) => {
+  const isProduction =
+    process.env.NODE_ENV === "production";
+
   res.clearCookie("adminToken", {
     httpOnly: true,
-    sameSite: "lax",
-    secure: false,
+    sameSite: isProduction ? "none" : "lax",
+    secure: isProduction,
   });
 
   res.json({
