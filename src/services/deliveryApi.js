@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:4001/api/delivery";
+import { API_BASE_URL } from "../config/api";
+const API_URL = `${API_BASE_URL}/api/delivery`;
 
 export async function getDeliverySchedule(date, type) {
   const params = new URLSearchParams({

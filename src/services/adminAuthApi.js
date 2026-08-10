@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:4001/api/admin";
+import { API_BASE_URL } from "../config/api";
+const API_URL = `${API_BASE_URL}/api/admin`;
 
 async function request(url, options = {}) {
   const response = await fetch(url, {

@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:4001/api/uploads";
+import { API_BASE_URL } from "../config/api";
+const API_URL = `${API_BASE_URL}/api/uploads`;
 
 export async function uploadProductImage(file) {
   const formData = new FormData();
