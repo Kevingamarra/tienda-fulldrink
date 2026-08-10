@@ -302,3 +302,20 @@
 .combo-stock.stock-out {
   color: #ff6b6b;
 }
+
+@media (max-width: 700px) {
+  .combo-image-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .combo-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    object-fit: cover;
+    object-position: center;
+  }
+}

@@ -83,8 +83,6 @@ function CombosCarousel() {
                       src={combo.image}
                       alt={combo.name}
                       className="combo-image"
-                      loading="lazy"
-                      decoding="async"
                     />
                   </div>
 
